@@ -1,0 +1,15 @@
+name: n5-jobvs
+on:
+  workflow_dispatch:
+cache-mode: write
+jobs:
+  j_none:
+    runs-on: ubuntu-latest
+    cache-mode: none
+    steps:
+      - run: mkdir -p d && echo x > d/f.txt
+      - uses: actions/cache/save@v4
+        with:
+          key: n5-jobvs-none-${{ github.run_id }}
+          path: d
+      - run: echo JOBVS_DONE

@@ -1,0 +1,31 @@
+name: n5-probe-scope
+on:
+  workflow_dispatch:
+jobs:
+  scope_probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: r1_same_repo_pr
+        id: r1
+        uses: actions/cache/restore@v4
+        with:
+          key: n5-save--37289160784
+          path: p1
+      - name: r2_fork_pr
+        id: r2
+        uses: actions/cache/restore@v4
+        with:
+          key: n5-save--37291971201
+          path: p2
+      - name: r3_prefix
+        id: r3
+        uses: actions/cache/restore@v4
+        with:
+          key: n5-nokey-xyz
+          restore-keys: |
+            n5-save--
+          path: p3
+      - run: |
+          echo "PROBE_R1=${{ steps.r1.outputs.cache-hit }}"
+          echo "PROBE_R2=${{ steps.r2.outputs.cache-hit }}"
+          echo "PROBE_R3=${{ steps.r3.outputs.cache-hit }}"
