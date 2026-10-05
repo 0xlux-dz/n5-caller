@@ -3,6 +3,7 @@ on:
   pull_request_target:
     branches: [main]
 jobs:
-  c_default__y_inherit:
-    uses: 0xlux-dz/n5-callee/.github/workflows/callee_inherit.yml@main
+  c_read__y_write:
+    cache-mode: read
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_write.yml@main
     with: {pair_id: "${{ github.job }}"}
