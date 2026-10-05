@@ -1,0 +1,8 @@
+name: n5_sp1
+on:
+  workflow_dispatch:
+jobs:
+  c_edge__y_e:
+    cache-mode: read
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_sp1.yml@main
+    with: {pair_id: "${{ github.job }}"}
