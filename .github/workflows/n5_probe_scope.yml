@@ -5,14 +5,22 @@ jobs:
   scope_probe:
     runs-on: ubuntu-latest
     steps:
-      - name: r3_prefix
+      - name: r3_short
         id: r3
         uses: actions/cache/restore@v4
         with:
-          key: n5-nokey-xyz2
+          key: n5-nokey-xyz3
           restore-keys: |
-            n5-save--
+            n5-
           path: p3
+      - name: r4_seedprefix
+        id: r4
+        uses: actions/cache/restore@v4
+        with:
+          key: n5-nokey-xyz4
+          restore-keys: |
+            n5-seed-
+          path: p4
       - run: |
-          echo "PROBE_R3_MATCHED=${{ steps.r3.outputs.cache-matched-key }}"
-          echo "PROBE_R3_HIT=${{ steps.r3.outputs.cache-hit }}"
+          echo "R3M=${{ steps.r3.outputs['cache-matched-key'] }}"
+          echo "R4M=${{ steps.r4.outputs['cache-matched-key'] }}"
