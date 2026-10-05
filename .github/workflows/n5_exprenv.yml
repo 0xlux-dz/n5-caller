@@ -1,0 +1,8 @@
+name: n5-exprenv
+on:
+  workflow_dispatch:
+jobs:
+  c_read__expr:
+    cache-mode: read
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_expr3.yml@main
+    with: {pair_id: "${{ github.job }}"}
