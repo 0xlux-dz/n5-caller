@@ -1,0 +1,7 @@
+name: n5-mc_unset__y_inherit
+on:
+  workflow_dispatch:
+jobs:
+  c_unset__y_inherit:
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_inherit.yml@main
+    with: {pair_id: "${{ github.job }}"}
