@@ -1,0 +1,14 @@
+name: n5-restore2
+on:
+  workflow_dispatch:
+jobs:
+  r_check2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: restore-fork-entry
+        id: r
+        uses: actions/cache/restore@v4
+        with:
+          key: n5-save--37291971201
+          path: n5data
+      - run: echo "FORK_CROSS=${{ steps.r.outputs.cache-hit }}"
