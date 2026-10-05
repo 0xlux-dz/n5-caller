@@ -1,0 +1,8 @@
+name: n5-mc_write__y_none
+on:
+  workflow_dispatch:
+jobs:
+  c_write__y_none:
+    cache-mode: write
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_none.yml@main
+    with: {pair_id: "${{ github.job }}"}
