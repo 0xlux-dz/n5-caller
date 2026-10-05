@@ -1,0 +1,14 @@
+name: n5-restore
+on:
+  workflow_dispatch:
+jobs:
+  r_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: restore-prt-entry
+        id: r
+        uses: actions/cache/restore@v4
+        with:
+          key: n5-save--37288562570
+          path: n5data
+      - run: echo "CROSS_RESTORE=${{ steps.r.outputs.cache-hit }}"
