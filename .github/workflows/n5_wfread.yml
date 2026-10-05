@@ -1,0 +1,11 @@
+name: n5-wfread
+on:
+  workflow_dispatch:
+cache-mode: read
+jobs:
+  c_auto__y_write:
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_write.yml@main
+    with: {pair_id: "${{ github.job }}"}
+  c_auto__y_inherit:
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_inherit.yml@main
+    with: {pair_id: "${{ github.job }}"}

@@ -1,0 +1,15 @@
+name: n5-seed
+on:
+  workflow_dispatch:
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    cache-mode: write
+    steps:
+      - name: prep
+        run: mkdir -p n5data && echo seed > n5data/f.txt
+      - name: save-seed
+        uses: actions/cache/save@v4
+        with:
+          key: n5-seed-v1
+          path: n5data

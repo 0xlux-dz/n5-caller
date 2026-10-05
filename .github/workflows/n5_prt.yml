@@ -1,0 +1,8 @@
+name: n5-prt
+on:
+  pull_request_target:
+    branches: [main]
+jobs:
+  c_default__y_write:
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_write.yml@main
+    with: {pair_id: "${{ github.job }}"}
