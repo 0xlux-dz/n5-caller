@@ -2,7 +2,11 @@ name: n5-probe
 on:
   workflow_dispatch:
 jobs:
-  p_cm:
-    cache-mode: read
+  p_none:
+    cache-mode: none
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_inherit.yml@main
+    with: {pair_id: "${{ github.job }}"}
+  p_wo:
+    cache-mode: write-only
     uses: 0xlux-dz/n5-callee/.github/workflows/callee_inherit.yml@main
     with: {pair_id: "${{ github.job }}"}
