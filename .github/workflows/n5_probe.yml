@@ -6,15 +6,3 @@ jobs:
     cache-mode: read
     uses: 0xlux-dz/n5-callee/.github/workflows/callee_read.yml@main
     with: {pair_id: "${{ github.job }}"}
-  p_w:
-    cache-mode: read
-    uses: 0xlux-dz/n5-callee/.github/workflows/callee_write.yml@main
-    with: {pair_id: "${{ github.job }}"}
-  p_n:
-    cache-mode: read
-    uses: 0xlux-dz/n5-callee/.github/workflows/callee_none.yml@main
-    with: {pair_id: "${{ github.job }}"}
-  p_wo:
-    cache-mode: read
-    uses: 0xlux-dz/n5-callee/.github/workflows/callee_writeonly.yml@main
-    with: {pair_id: "${{ github.job }}"}
