@@ -1,0 +1,8 @@
+name: n5-none
+on:
+  workflow_dispatch:
+jobs:
+  c_none__y_inherit:
+    cache-mode: none
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_inherit.yml@main
+    with: {pair_id: "${{ github.job }}"}
