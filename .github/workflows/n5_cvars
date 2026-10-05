@@ -1,0 +1,8 @@
+name: n5_cvars
+on:
+  workflow_dispatch:
+jobs:
+  c_read__ctx:
+    cache-mode: read
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_cvars.yml@main
+    with: {pair_id: "${{ github.job }}"}

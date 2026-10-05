@@ -1,0 +1,8 @@
+name: n5_chash
+on:
+  workflow_dispatch:
+jobs:
+  c_read__ctx:
+    cache-mode: read
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_chash.yml@main
+    with: {pair_id: "${{ github.job }}"}
