@@ -2,8 +2,7 @@ name: n5-probe
 on:
   workflow_dispatch:
 jobs:
-  p_plain_w:
-    runs-on: ubuntu-latest
+  p_w_w:
     cache-mode: write
-    steps:
-      - run: echo "EFF=${ACTIONS_CACHE_MODE:-UNSET}"
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_write.yml@main
+    with: {pair_id: "${{ github.job }}"}
