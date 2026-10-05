@@ -1,15 +1,8 @@
 name: n5-expr
 on:
   workflow_dispatch:
-    inputs:
-      escalate:
-        description: callee cache-mode
-        type: string
-        default: read
 jobs:
-  c_read__expr:
+  c_read__expr2:
     cache-mode: read
-    uses: 0xlux-dz/n5-callee/.github/workflows/callee_expr.yml@main
-    with:
-      pair_id: "${{ github.job }}"
-      mode: ${{ inputs.escalate }}
+    uses: 0xlux-dz/n5-callee/.github/workflows/callee_expr2.yml@main
+    with: {pair_id: "${{ github.job }}"}
